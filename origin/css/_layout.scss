@@ -1,0 +1,39 @@
+.ht308-main {
+  position: absolute;
+  left:0px; right:20px;
+  top: 0px;
+  bottom: 228px;
+
+  .main-page {
+    position: absolute;
+    top: 0px; left:0; right:0; bottom:0;
+
+    .main-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 430px;
+      bottom: -20px;
+    }
+
+    .main-right {
+      position: absolute;
+      top: 0;
+      left: 450px;
+      right: 0;
+      bottom: 0;
+    }
+
+    .user-station {
+      left: 20px !important;
+    }
+  }
+}
+
+.ht308-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 220px;
+  padding-left:430px;
+}

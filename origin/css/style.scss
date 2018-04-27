@@ -1,0 +1,544 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "reset";
+@import "layout";
+
+$border: 1px solid #343637;
+$highlight-color: #0A39A4;
+$alert-color: #950A0B;
+$warn-color: #FF6100;
+$normal-color: #42B500;
+
+html, body {
+  background-color: #181A1B;
+  color: #A3A3A4;
+  font-size: 14px;
+  font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+.pull-right {
+  float: right;
+}
+
+.ht308-container {
+  position: absolute;
+  left:0; right: 0; top: 0; bottom: 0;
+}
+
+.ht308-header {
+  height: 70px;
+  ul {
+    display: inline-block;
+    overflow: hidden;
+    li {
+      float: left;
+      margin-left: 40px;
+      a {
+        padding: 20px 0;
+        line-height: 30px;
+        display: block;
+      }
+    }
+  }
+
+  .userinfo {
+    float: right;
+    line-height: 70px;
+    padding-right: 20px;
+    label {
+      margin-left: 10px;
+    }
+  }
+}
+
+.org-tree {
+  border-right: $border;
+  border-bottom: $border;
+
+  .tree-selector {
+    background-color: #23272B;
+    padding: 15px;
+    height: 60px;
+    line-height: 30px;
+    margin-right: -1px;
+
+    ul {
+      float: right;
+      li {
+        float: left;
+        a {
+          padding: 0 15px;
+          display: block;
+          cursor: pointer;
+          &.active {
+            background-color: $highlight-color;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .tree-box {
+    padding: 30px 30px 0 0;
+
+    li > ul {
+      padding-left: 30px;
+    }
+
+    ul {
+      &.level-1 > li > a {
+        font-size: 18px;
+        line-height: 50px;
+      }
+      &.level-2 > li > a {
+        font-size: 16px;
+        line-height: 40px;
+      }
+      a {
+        line-height: 30px;
+        display: block;
+        padding-left: 30px;
+        cursor: pointer;
+        &.active {
+          background-color: $highlight-color;
+        }
+      }
+    }
+  }
+}
+
+
+.map-box {
+  border: $border;
+  background-color: #2A3036;
+}
+
+.monitor-box {
+  .monitor-title {
+    line-height: 50px;
+    background-color: #1E2022;
+    margin-bottom: 18px;
+    padding-left: 28px;
+    overflow: hidden;
+    .userinfo {
+      float: right;
+      line-height: 50px;
+      padding-right: 20px;
+      label {
+        margin-left: 10px;
+      }
+    }
+
+    a {
+      color: #A3A3A4;
+      margin-right: 20px;
+      cursor: pointer;
+      &:hover {
+        color: #F2F2F3;
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+  .monitor-list {
+    overflow: hidden;
+  }
+
+  .monitor-item {
+    padding:0 18px 15px;
+    float: left;
+    background-color: #1E2022;
+    width: 49%;
+    margin-bottom: 20px;
+    border: $border;
+
+    &:nth-child(even) {
+      margin-left: 2%;
+    }
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 8px;
+    }
+    td {
+      text-align: center;
+      padding: 8px 10px;
+      &.vfield {
+        background-color: #0A0A0B;
+      }
+      &.main-value {
+        font-size: 30px;
+      }
+      &.mchart {
+        height: 210px;
+      }
+      &.just-for-height {
+        height: 80px;
+      }
+    }
+    .chart-wrapper {
+      position:absolute;left:10px;top:0;right:-10px;
+      background-color: #0A0A0B;
+      .mchart {
+        height:320px;top:-35px;
+      }
+    }
+
+  }
+
+  .m-alert td.highlight-field {
+    background-color: $alert-color;
+    color: #0A0A0B;
+  }
+  .m-warn td.highlight-field {
+    background-color: $warn-color;
+    color: #0A0A0B;
+  }
+  .m-normal td.highlight-field {
+    background-color: $normal-color;
+    color: #0A0A0B;
+  }
+
+}
+
+.user-card {
+  position: absolute;
+  left:0;bottom:0;top:10px;
+  padding: 24px 30px;
+  font-size: 20px;
+  width: 430px;
+  background-color: #2A3036;
+  color: #CCC;
+
+  p {
+    margin-bottom: 15px;
+
+    &.btn-box {
+      margin-top: 20px;
+      .btn-exit {
+        background-color: #1E2022;
+        margin-left: 20px;
+      }
+    }
+
+  }
+
+  a {
+    background-color: $highlight-color;
+    font-size: 14px;
+    padding: 5px 10px;
+    color: #CCC;
+    text-decoration: none;
+  }
+}
+
+.device-list {
+  padding: 6px 15px 0;
+  overflow:hidden;
+  .device-item {
+    position: relative;
+    height: 208px;width: 208px;
+    border: 4px solid #181A1B;
+    float: left;
+    background-color: #757A7E;
+    text-align: center;
+    color: #000;
+    padding: 15px;
+    margin-left: 2px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    .name {
+      background-color: #0DA014;
+      width: 150px;line-height: 24px;
+      margin: 0 auto;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+    }
+
+    .status {
+      color: #45FF4E;
+      font-size: 20px;
+      height: 40px;
+      padding-top: 16px;
+    }
+
+    .alarm-type {
+      font-size: 24px;
+      color: #E90000;
+    }
+    .contact {
+      position: absolute;
+      left:0; right: 0; bottom: 0;
+      line-height: 32px;
+      font-size: 20px;
+      color: #fff;
+    }
+  }
+  .active {
+    border-color: #004EFF;
+  }
+
+  .alert-1 {
+    .name {
+      background-color: #93989C;
+      color: #6C7074;
+    }
+    .status {
+      color: #3D4042;
+    }
+  }
+
+  .alert2 {
+    .name {
+      background-color: #E90000;
+    }
+    .status {
+      color: #BB0000;
+    }
+  }
+
+  .alert71 {
+    .name {
+      background-color: #F5BA13;
+    }
+    .status {
+      color: #F5BA13;
+    }
+  }
+
+  .alert1 {
+    .name {
+      background-color: $warn-color;
+    }
+    .status {
+      color: $warn-color;
+    }
+  }
+
+  .active-one-info {
+    float: right;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #757A7E;
+    color: #1E2022;
+    p {
+      margin-bottom: 10px;
+      &.info {
+        font-size: 18px;
+      }
+    }
+
+  }
+
+}
+
+.video-box {
+  border: $border;
+  width: 400px;
+  height: 300px;
+  margin: 0 auto 10px;
+}
+
+.emergency-plan {
+
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.alarm-history {
+  position: absolute;left:0px;bottom:210px;background-color: #E2E2E2;
+  width: 1000px;
+  font-size: 16px;
+  color: #0A0A0B;
+  padding: 10px 20px;
+  min-height: 400px;
+  z-index: 100;
+  .thead {
+    font-weight: 900;
+    font-size: 1.2em;
+  }
+  td {
+    padding: 10px 20px;
+    border-bottom: 1px solid #CCC;
+    line-height: 1.2;
+  }
+
+  .btn-box {
+    margin-top: 10px;
+    button {
+      padding: 5px 10px;
+      margin-right: 20px;
+    }
+  }
+
+}
+
+.hidden {
+  display: none;
+}
+
+.alarm-box {
+  position: absolute;
+  left: 0;
+  bottom: 210px;
+  width: 430px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #1E2022;
+
+  .alert-level-1 {
+    background-color: $warn-color;
+  }
+  .alert-level-2 {
+    background-color: $alert-color;
+  }
+
+  .event-info {
+    padding: 5px;
+    margin-top: 5px;
+    .event-time {
+      font-size: 12px;
+    }
+    .event-type {
+      font-size: 20px;
+      color: #0A0A0B;
+    }
+    .event-detail {
+      font-size: 14px;
+    }
+    .btn-clear {
+      float: right;
+      font-size: 14px;
+      padding: 2px 10px;
+      background-color: #999;
+      cursor: pointer;
+    }
+  }
+
+}
+
+.ht308-login-container {
+  background-color: #2A3036;
+}
+
+.login-box {
+  width: 340px;
+  margin: 350px auto 0;
+  padding-top: 70px;
+  background: url(../image/logo.png) center top no-repeat;
+
+  h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .input-login {
+    display: block;
+    padding: 8px 15px;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+  }
+
+  .username, .password {
+    background-color: #C0C1C3;
+    color: #6F7071;
+  }
+
+  .password {
+    margin-bottom: 20px;
+  }
+
+  .btn-login {
+    color: #fff;
+    background-color: $highlight-color;
+    cursor: pointer;
+  }
+
+  .text-error {
+    color: #E90000;
+  }
+}
+
+
+.monitor-226-container {
+  table.raman-check-list {
+    float: left;
+    margin-right: 30px;
+    td {
+      padding: 10px;
+    }
+    thead td {
+      border-bottom: 1px solid #999;
+    }
+    tbody td {
+      border-top: 1px solid #999;
+    }
+  }
+  .raman-check-detail {
+    float: left;
+    width: 700px;
+    .mchart {
+      width: 600px;
+      height: 400px;
+      margin-top: -30px;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    .raman-detail {
+      margin-top: 10px;
+      padding-left: 30px;
+      line-height: 1.5;
+    }
+
+  }
+}
+
+.data-view {
+  background-color: #181A1B;
+  padding-left: 20px;
+  position: absolute;
+  left: 0px;
+  top: 0;
+  right:0;
+  bottom: 0;
+}
